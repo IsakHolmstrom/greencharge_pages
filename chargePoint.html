@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GCI First Draft</title>
+</head>
+<body>
+    <button onclick="sidebar(this)" class="btn-sidebar btn d-none position-absolute">
+        <svg id="arrowRight" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-bar-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="20" y1="12" x2="10" y2="12" />
+            <line x1="20" y1="12" x2="16" y2="16" />
+            <line x1="20" y1="12" x2="16" y2="8" />
+            <line x1="4" y1="4" x2="4" y2="20" />
+        </svg>
+        <svg id="arrowLeft" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-bar-left d-none" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="4" y1="12" x2="14" y2="12" />
+            <line x1="4" y1="12" x2="8" y2="16" />
+            <line x1="4" y1="12" x2="8" y2="8" />
+            <line x1="20" y1="4" x2="20" y2="20" />
+        </svg>
+    </button>
+    <div class="d-flex">
+        <nav id="sidebar" class="navbar navbar-light bg-light pt-0 d-block w-400 vh-100 top-0 position-sticky">
+            <div class="position-relative">
+                <img src="images/car.jpg" alt="" class="mw-100 mh-100 h-auto">
+                <h1 class="fs-big text-white position-absolute bottom-0 mb-4 ms-4">Meny</h1>
+            </div>
+
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link d-flex align-items-center justify-content-between text-center m-2">
+                        <h2 class="text-black m-0 fs-4">Dashboard</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dashboard" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="13" r="2" />
+                            <line x1="13.45" y1="11.55" x2="15.5" y2="9.5" />
+                            <path d="M6.4 20a9 9 0 1 1 11.2 0z" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item my-active">
+                    <a href="chargePoint.html" class="nav-link d-flex align-items-center justify-content-between text-center m-2">
+                        <h2 class="text-black m-0 fs-4">Laddstationer</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plug" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7 7h10v6a3 3 0 0 1 -3 3h-4a3 3 0 0 1 -3 -3v-6" />
+                            <line x1="9" y1="3" x2="9" y2="7" />
+                            <line x1="15" y1="3" x2="15" y2="7" />
+                            <path d="M12 16v2a2 2 0 0 0 2 2h3" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="users.html" class="nav-link d-flex align-items-center justify-content-between text-center m-2">
+                        <h2 class="text-black m-0 fs-4">Användare</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="vehicle.html" class="nav-link d-flex align-items-center justify-content-between text-center m-2">
+                        <h2 class="text-black m-0 fs-4">Fordon</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-car" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="7" cy="17" r="2" />
+                            <circle cx="17" cy="17" r="2" />
+                            <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="payment.html" class="nav-link d-flex align-items-center justify-content-between text-center m-2">
+                        <h2 class="text-black m-0 fs-4">Betalning</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="3" y="5" width="18" height="14" rx="3" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                            <line x1="7" y1="15" x2="7.01" y2="15" />
+                            <line x1="11" y1="15" x2="13" y2="15" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center pt-3 bg-light" style="margin-top: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle" width="80" height="80" viewBox="0 0 24 24" stroke-width="0.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                </svg>
+                <h4>John Doe</h4>
+                <div class="ms-auto me-2 dropup">
+                    <button class="btn" type="button" id="user-settings" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
+
+                    <ul class="dropdown-menu" aria-labelledby="user-settings">
+                        <li class="ms-2 nav-item">
+                            <a href="account.html" class="text-decoration-none nav-link d-flex align-items-center text-black m-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="7" r="4" />
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                </svg>
+                                Account
+                            </a>
+                        </li>
+                        <li class="ms-2 nav-item">
+                            <a href="#" class="text-decoration-none nav-link d-flex align-items-center text-black m-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout me-2" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                    <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                                </svg>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="bg-gray-100 w-100">
+            <div class="d-flex justify-content-center align-items-center mb-3 mt-3">
+                <div class="w-75">
+                    <button class="btn bg-white me-2 fw-bold">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search me-2" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="10" cy="10" r="7" />
+                                <line x1="21" y1="21" x2="15" y2="15" />
+                            </svg>
+                            Sök
+                        </div>
+                    </button>
+                    <button class="btn bg-white dropdown-toggle fw-bold" type="button" id="filtrering" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filtrera
+                    </button>
+
+                    <hr>
+
+                    <ul class="dropdown-menu" aria-labelledby="filtrering">
+                        <li class="dropdown-item">
+                            <a href="#" class="text-decoration-none">Option 1</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="text-decoration-none">Option 2</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="text-decoration-none">Option 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center text-center">
+                        <div onclick="expandRow(this);" id="expand" class="col-sm-6 col-md-4 col-lg-2">
+                            <img class="w-50 charger-img" src="images/wallbox.jpg" alt="Charger">
+                        </div>
+                        <div onclick="expandRow(this);" id="expand" class="col-sm-6 col-md-4 col-lg-2">
+                            <h5>SE*GCI*E00007</h5>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand" class="col-sm-6 col-md-4 col-lg-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wifi" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+                            </svg>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand" class="col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                            <div class="status px-5 py-1 bg-success rounded-pill fw-bold text-white">
+                                Connected
+                            </div>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand" class="col-sm-6 col-md-4 col-lg-2">
+                            <p>Last ping</p>
+                            <p>0h 3min</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <button class="btn" type="button" id="settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="settings">
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Restart</a></li>
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Soft Restart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row bg-gray-200 shadow-top d-none" aria-expanded="false">
+                        <div class="col-12 expand-table">
+                            Hello World!
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex justify-content-center align-items-center text-center">
+                        <div onclick="expandRow(this);" id="expand2" class="col-sm-6 col-md-4 col-lg-2">
+                            <img class="w-50 charger-img" src="images/wallbox.jpg" alt="Charger">
+                        </div>
+                        <div onclick="expandRow(this);" id="expand2" class="col-sm-6 col-md-4 col-lg-2">
+                            <h5>ChargeAmps</h5>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand2" class="col-sm-6 col-md-4 col-lg-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wifi" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+                            </svg>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand2" class="col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                            <div class="status px-5 py-1 bg-danger rounded-pill fw-bold text-white">
+                                No Signal
+                            </div>
+                        </div>
+                        <div onclick="expandRow(this);" id="expand2" class="col-sm-6 col-md-4 col-lg-2">
+                            <p>Last ping</p>
+                            <p>1h 17min</p>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <button class="btn" type="button" id="settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="settings">
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Restart</a></li>
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Soft Restart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row bg-gray-200 shadow-top d-none" aria-expanded="false">
+                        <div class="col expand-table">
+                            <div class="container expand-table">
+                                <div class="row pt-4">
+                                    <div class="col-sm-12 col-md-6">
+                                        <canvas id="chargePointChart" class="m-0 w-100"></canvas>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <h5 class="m-1 ms-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-activity" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                            </svg>
+                                            Activity
+                                            <table class="table table-bordered table-responsive d-flex justify-content-start mt-3 w-100">
+                                                <tr>
+                                                    <th scope="col">Uttag</th>
+                                                    <th scope="col">Senast anslutning</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Uttag 1</td>
+                                                    <td>2021-10-28: 10:34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Uttag 2</td>
+                                                    <td>2021-10-03: 16:12</td>
+                                                </tr>
+                                            </table>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="expand-table d-flex info">
+                                <canvas id="chargePointChart" class="m-0"></canvas>
+                                <h5 class="m-1 ms-4 w-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-activity" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                    </svg>
+                                    Activity -->
+                                    <!-- <div class="container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-4 border py-2 fw-bold">
+                                                <h5>Uttag</h5>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-4 border py-2 fw-bold">
+                                                <h5>
+                                                    Senast anslutning
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="row fw-normal">
+                                            <div class="col-sm-6 col-lg-4 border py-2">
+                                                <p>Uttag 1</p>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-4 border py-2">
+                                                <p>2021-10-28: 10:34</p>
+                                            </div>
+                                        </div>
+                                        <div class="row fw-normal">
+                                            <div class="col-sm-6 col-lg-4 border py-2">
+                                                <p>Uttag 2</p>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-4 border py-2">
+                                                <p>2021-10-03: 16:12</p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- <table class="table table-bordered table-responsive d-flex justify-content-center mt-3 w-100">
+                                        <tr>
+                                            <th scope="col">Uttag</th>
+                                            <th scope="col">Senast anslutning</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Uttag 1</td>
+                                            <td>2021-10-28: 10:34</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uttag 2</td>
+                                            <td>2021-10-03: 16:12</td>
+                                        </tr>
+                                    </table>
+                                </h5> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- <table class="table w-75">
+                    <tr  class="tr-hover">
+                        <td onclick="expandRow(this);" id="expand">
+                            <img class="w-50" src="images/wallbox.jpg" alt="Charger">
+                        </td>
+                        <td onclick="expandRow(this);" id="expand"><h5>SE*GCI*E00007</h5></td>
+                        <td onclick="expandRow(this);" id="expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wifi" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+                            </svg>
+                        </td>
+                        <td onclick="expandRow(this);" id="expand">
+                            <div class="bg-success rounded-pill fw-bold text-white">
+                                Connected
+                            </div>
+                        </td>
+                        <td onclick="expandRow(this);" id="expand">
+                            <p>Last ping</p>
+                            <p>0h 3min</p>
+                        </td>
+                        <td>
+                            <button class="btn" type="button" id="settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="settings">
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Restart</a></li>
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Soft Restart</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="bg-gray-200 shadow-top d-none" aria-expanded="false">
+                        <td colspan="6">
+                            <div class="expand-table">Hello World!</div>
+                        </td>
+                    </tr>
+                    <tr class="tr-hover">
+                        <td onclick="expandRow(this);" id="expand2"><img class="w-50" src="images/wallbox.jpg" alt="Charger"></td>
+                        <td onclick="expandRow(this);" id="expand2"><h5>ChargeAmps</h5></td>
+                        <td onclick="expandRow(this);" id="expand2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wifi" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+                            </svg>
+                        </td>
+                        <td onclick="expandRow(this);" id="expand2">
+                            <div class="bg-danger rounded-pill fw-bold text-white">
+                                No Signal
+                            </div>
+                        </td>
+                        <td onclick="expandRow(this);" id="expand2">
+                            <p>Last ping</p>
+                            <p>1h 17min</p>
+                        </td>
+                        <td>
+                            <button class="btn" type="button" id="settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="settings">
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Restart</a></li>
+                                <li class="ms-2 nav-item"><a href="#" class="text-decoration-none nav-link">Soft Restart</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="bg-gray-200 shadow-top d-none" aria-expanded="false">
+                        <td colspan="6">
+                            <div class="expand-table d-flex">
+                                <canvas id="chargePointChart"></canvas>
+                                <h5 class="m-1 ms-4 w-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-activity" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                                    </svg>
+                                    Activity
+                                    <table class="table table-bordered table-responsive d-flex justify-content-center mt-3 w-100">
+                                        <tr>
+                                            <th scope="col">Uttag</th>
+                                            <th scope="col">Senast anslutning</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Uttag 1</td>
+                                            <td>2021-10-28: 10:34</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uttag 2</td>
+                                            <td>2021-10-03: 16:12</td>
+                                        </tr>
+                                    </table>
+                                </h5>
+                            </div>
+                        </td>
+                    </tr>
+                </table> -->
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="w-75 d-flex justify-content-end mb-3">
+                    <button class="btn bg-white fw-bold">+ Lägg till</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = [
+            '12 okt.',
+            '13 okt.',
+            '14 okt.',
+            '15 okt.',
+            '16 okt.',
+            '17 okt.',
+            '18 okt.',
+        ];
+
+        const chargePointData = {
+            labels : labels,
+            datasets: [{
+                label: 'kWH',
+                fill: true,
+                backgroundColor: 'rgba(176, 210, 24, 0.1)',
+                borderColor: 'rgb(176, 210, 24)',
+                tension: 0.3,
+                data: [5, 2, 6, 7, 4, 3, 6, 5]
+            }]
+        };
+
+        const chargePointConfig = {
+            type: 'line',
+            data: chargePointData,
+            options: {}
+        }
+
+        var chargePointChart = new Chart(
+            document.getElementById("chargePointChart"),
+            chargePointConfig
+        );
+
+    </script>
+    <script>
+        function expandRow (element) {
+            var row = document.getElementById(element.id).parentElement.nextElementSibling;
+            if (row.getAttribute("aria-expanded") == "false") {
+                row.setAttribute("class", "bg-gray-200 shadow-top");
+                row.setAttribute("aria-expanded", "true");
+            } else {
+                row.setAttribute("class", "d-none");
+                row.setAttribute("aria-expanded", "false");
+            }
+        }
+    </script>
+        <script src="js/sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
